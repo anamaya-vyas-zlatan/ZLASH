@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+
+<table class ="table table-striped">
+    <tr>
+    
+        <th>TYPE</th>
+        <th>SUBJECT</th>
+       
+        <th>Date</th>
+        <th>Body</th>
+    </tr>
+    {% for myprob in myproblems %}
+        <tr>
+           
+            <td>{{myprob.Problem_Type}}</td>
+            <td>{{myprob.Problem_Subject}}</td>
+            
+            <td>{{myprob.Create_Date}}</td>
+            <td>{{myprob.Problem_Body}}</td>
+
+        </tr>
+    {% endfor %}
+
+</table>
+
+{% endblock %}

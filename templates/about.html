@@ -1,0 +1,125 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+
+<body style="background-image:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw8PDxUPDw8VFRUVFRUVFRUVFRUVFRUVFRUWFhUVFRUYHSggGBolHRUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDQ0NDg0NDisZFRkrKysrLSsrKysrKy03KysrLSsrKysrLSstKysrKysrNy0tKysrKysrKysrKysrKysrK//AABEIALEBHAMBIgACEQEDEQH/xAAXAAEBAQEAAAAAAAAAAAAAAAABAAIH/8QAFhABAQEAAAAAAAAAAAAAAAAAAAER/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDkBSBFQgijAEKMBFEFEUCxHEgkYgCw4gCOIAGgAFaoABoKMhoABhQMhoUACAAKAkGAYlCCMUIIxEEYiCRUQRxEAiQCw4sAYsKBlYVQZDQoAY0AZoaoUZDVFBlGgACACSAwwQgmgQRUMAkGIGEGAUjARRBJEAiQZTQwAGgDIawUGVSAZDQAM1oKMitAACKABoAkNAioYChiMAwgoExEEUQRRBIoBiwoAsKABoAyK1QDNFaAMimigBSKDKIqjNDQAAgCQQJgIGERqAmgYgYYIQMaEMBFGAikCRQBEAA0AZqNFBmhqigzQQDIaZACkVQUGgADQBIIGEEC1GY0BhghiBjQhgGEQgSCBIIJJAkkABAAGgAKaKDNFaZACmgGaK1WaoBSAAIAkEDCIYBjUZhgNQiGIGNMtATAQJBAkICggKQBAigBSKAoprNAAigGWqzQTNNCgBAAEASzGoBLMINQggYYDEGoWSDRBgGEECWSBQQEJAggCoIAUGsgqEAFFIAAiqAEAAQCIMAmCEDDAQahjJQahZMBqFmEGizpAnWSBQQFDUCQQIKgENQoIKgACKoKDRQFBoADTQCIIGEECQQJgUBoswoNFmEGiyga1DUDSGgGgEBC0AQgCtFQBUGgACyogaKASFAJVAohCBIIE6yQaLJBpQIGiyUGkyQa1ayQK0IDqGrQOgICBqBICqEIAggCCQIIAgkCKQFQoFCkChSAlIEUkFDElCokgoigCSBRJABUgCSUCSBlQICEgASBJIH/2Q==);height: 100%; background-repeat: no-repeat; background-size: cover;">
+
+<br>
+
+<style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+    }
+    
+    html {
+      box-sizing: border-box;
+    }
+    
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+    
+    .column {
+      float: left;
+      width: 33.3%;
+      margin-bottom: 16px;
+      padding: 0 8px;
+    }
+    
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      margin: 8px;
+    }
+    
+    .about-section {
+      padding: 50px;
+      text-align: center;
+      background-color: #474e5d;
+      color: white;
+    }
+    
+    .container {
+      padding: 0 16px;
+    }
+    
+    .container::after, .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    
+    .title {
+      color: grey;
+    }
+    
+    .button {
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 8px;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+    }
+    
+    .button:hover {
+      background-color: #555;
+    }
+    
+    @media screen and (max-width: 650px) {
+      .column {
+        width: 100%;
+        display: block;
+      }
+    }
+    </style>
+    </head>
+    <body>
+    <center style="padding-left: 10px; padding-right: 10px;">
+      <h1 style="color:#FF6663;">Here is something about us!</h1>
+      <h4 style="color:greenyellow">This website- ZLASH is made by Mr.Anamaya Vyas and Ms.Rashi Maru.</h4>
+      <br>
+      <p style="color: white">We have built ZLASH in order to help budding entrepreneurs to grow, investors to invest in them and people to post their problems they are facing to inspire solutions to be built.</p> 
+      <p style="color: white;">There are people who have the potential to grow as a company, from a product or a prototype. But, sadly they might be too young to get a loan from the bank or might have exhausted all their resources. To help these entrepreneurs, we have an interface in which investors can log in and see their business profiles and CV if interested. Also, there might be cases where entrepreneurs have enough resources to begin a start-up but might not have an idea as to what kind of product to create in order to help others. Hence, we have a section where anybody can post their problems anonymously and wait for a solution to be prepared by entrepreneurs.</p>
+      <p style="color: white;">To keep an update as to where the market is tilting towards, there is an option as "Stock Market" which gives a graphical representation for the same. All you need to do is type the symbol of the Stock ETF or mutual fund to see its history and present rate.</p>
+    </center>
+    <br>
+    <h2 style="text-align:center; color:#00a69c">Our Team</h2>
+    <br>
+    <div class="row">
+      <div class="column">
+        <div class="card">
+          <img src="../static/images/annaam.jpeg" alt="Anamaya Vyas" style="width: 500px;" >
+          <div class="container">
+            <h2>Anamaya Vyas</h2>
+            <p class="title">Back-end Developer</p>
+            <p>A 19-year old guy studying in Vellore Institute of Technology, branch: CSE Core. A back-end developer who is inetrested in sports, especially football. Loves to write poems and sattires. Reads hindi literature and has a passion for collecting stamps and coins. </p>
+            
+            <!-- <p><a href="/cv_anamaya"><button class="button">CV</button></a></p> -->
+          </div>
+        </div>
+      </div>
+    
+      <div class="column">
+        <div class="card">
+          <img src="../static/images/rashipic.jpg" alt="Rashi Maru" style="width:500px;">
+          <div class="container">
+            <h2>Rashi Maru</h2>
+            <p class="title">Front-end Developer</p>
+            <p>A 19-year old studying in Vellore Institute of Technology, branch: CSE Core. A front-end developer who is interested in writing that could arise motivation in others. Also like stargazing and ganing knowledge about space.</p>
+         
+            <!-- <p><a href="/cv_rashi"><button class="button">CV</button></a></p> -->
+          </div>
+        </div>
+      </div>
+      
+      
+    </div>
+    
+    </body>
+
+{% endblock %}

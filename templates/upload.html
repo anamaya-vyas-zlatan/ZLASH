@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+ 
+{% macro render_field(field) %}
+  {{ field.label }}
+  {{ field(**kwargs)|safe }}
+  {% if field.errors %}
+    {% for error in field.errors %}
+      <span class="help-inline">{{ error }}</span>
+    {% endfor %}
+  {% endif %}
+{% endmacro %}
+
+
+
+
+<form action = "http://localhost:5000/uploader" method = "POST" 
+enctype = "multipart/form-data">
+
+<input type = "file" name = "file" />
+<input type = "submit"/>
+</form>
+
+{% endblock %}

@@ -1,0 +1,407 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+
+    {% if at  %}
+
+{% macro render_field(field) %}
+  {{ field.label }}
+  {{ field(**kwargs)|safe }}
+  {% if field.errors %}
+    {% for error in field.errors %}
+      <span class="help-inline">{{ error }}</span>
+    {% endfor %}
+  {% endif %}
+{% endmacro %}
+
+
+
+
+
+<body style="background-image: url(https://images.unsplash.com/photo-1579546929662-711aa81148cf?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHw%3D&w=1000&q=80); background-size: cover; background-repeat: no-repeat;">
+
+  <br><br><br>
+  <div class="container" style="background-color:black;">
+  
+    <h1 style="color:#EEA80C; padding-top: 20px;padding-bottom: 10px; 
+    font-family: 'Libre Baskerville', serif; "> <center>Fill your CV</center></h1><br>
+   
+  <br>
+
+    <form method="POST" action="">
+     
+
+      <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+      
+        <input type="text" name="Cv_Full_Name" style="
+        background: none;
+        display: block;
+        margin: 20px auto;
+        text-align: center;
+        border: 2px solid #3498db;
+        padding: 10px 10px;
+        width: 250px;
+        outline: none;
+        color: white;
+        border-radius: 24px;
+        transition: 0.25s" class="form-control" placeholder="Full Name"  value={{request.form.Cv_Full_Name}}>
+      </div>
+  
+
+
+  <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+  
+    <input type="text" name="Cv_Speciality" style="
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 10px 10px;
+    width: 250px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s" class="form-control" placeholder="Speciality in your field"  value={{request.form.Cv_Speciality}}>
+  </div>
+
+        <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+        
+          <input type="text" name="Address" style="
+          background: none;
+          display: block;
+          margin: 20px auto;
+          text-align: center;
+          border: 2px solid #3498db;
+          padding: 10px 10px;
+          width: 250px;
+          outline: none;
+          color: white;
+          border-radius: 24px;
+          transition: 0.25s" class="form-control" placeholder="Home address"  value={{request.form.Address}}>
+        </div>
+      
+
+        
+
+
+      <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+
+        <input type="text" name="Email" style="
+        background: none;
+        display: block;
+        margin: 20px auto;
+        text-align: center;
+        border: 2px solid #3498db;
+        padding: 10px 10px;
+        width: 250px;
+        outline: none;
+        color: white;
+        border-radius: 24px;
+        transition: 0.25s" class="form-control" placeholder="Email address"  value={{request.form.Email}}>
+      </div>
+
+
+
+        <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+          
+          <input type="text" name="Contact" style="
+          background: none;
+          display: block;
+          margin: 20px auto;
+          text-align: center;
+          border: 2px solid #3498db;
+          padding: 10px 10px;
+          width: 250px;
+          outline: none;
+          color: white;
+          border-radius: 24px;
+          transition: 0.25s" class="form-control" placeholder="10-digit phone number" value={{request.form.Contact}}>
+        </div>
+
+
+
+
+        <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+       
+          <input type="text" name="Linkdin" style="
+          background: none;
+          display: block;
+          margin: 20px auto;
+          text-align: center;
+          border: 2px solid #3498db;
+          padding: 10px 10px;
+          width: 250px;
+          outline: none;
+          color: white;
+          border-radius: 24px;
+          transition: 0.25s" class="form-control" placeholder="LinkedIn profile link"  value={{request.form.Linkdin}}>
+        </div>
+
+
+        <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+        
+          <input type="text" name="Twitter" style="
+          background: none;
+          display: block;
+          margin: 20px auto;
+          text-align: center;
+          border: 2px solid #3498db;
+          padding: 10px 10px;
+          width: 250px;
+          outline: none;
+          color: white;
+          border-radius: 24px;
+          transition: 0.25s" class="form-control" placeholder="Twitter profile link"  value={{request.form.Twitter}}>
+        </div>
+
+        <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+         
+          <input type="text" name="Github" style="
+          background: none;
+          display: block;
+          margin: 20px auto;
+          text-align: center;
+          border: 2px solid #3498db;
+          padding: 10px 10px;
+          width: 250px;
+          outline: none;
+          color: white;
+          border-radius: 24px;
+          transition: 0.25s" class="form-control" placeholder="Github link"  value={{request.form.Github}}>
+        </div>
+
+        <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+         
+          <input type="text" name="Website" style="
+          background: none;
+          display: block;
+          margin: 20px auto;
+          text-align: center;
+          border: 2px solid #3498db;
+          padding: 10px 10px;
+          width: 250px;
+          outline: none;
+          color: white;
+          border-radius: 24px;
+          transition: 0.25s" class="form-control" placeholder="Website link"  value={{request.form.Website}}>
+        </div>
+
+
+<div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+
+  <input type="text" name="Profile" style="
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 10px 10px;
+  width: 250px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s" class="form-control" placeholder="Profile of your company"  value={{request.form.Profile}}>
+</div>
+
+<div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+  
+  <input type="text" name="Skills" style="
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 10px 10px;
+  width: 250px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s" class="form-control" placeholder="Skills"  value={{request.form.Skills}}>
+</div>
+
+
+
+     
+        <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+        
+          <input type="text" name="Languages" style="
+          background: none;
+          display: block;
+          margin: 20px auto;
+          text-align: center;
+          border: 2px solid #3498db;
+          padding: 10px 10px;
+          width: 250px;
+          outline: none;
+          color: white;
+          border-radius: 24px;
+          transition: 0.25s" class="form-control" placeholder="Languages you speak"  value={{request.form.Languages}}>
+        </div>
+
+        
+
+        <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+        
+          <input type="text" name="Software" style="
+          background: none;
+          display: block;
+          margin: 20px auto;
+          text-align: center;
+          border: 2px solid #3498db;
+          padding: 10px 10px;
+          width: 250px;
+          outline: none;
+          color: white;
+          border-radius: 24px;
+          transition: 0.25s" class="form-control" placeholder="Softwares you know"  value={{request.form.Software}}>
+        </div>
+
+
+        <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+        
+          <input type="text" name="Experience" style="
+          background: none;
+          display: block;
+          margin: 20px auto;
+          text-align: center;
+          border: 2px solid #3498db;
+          padding: 10px 10px;
+          width: 250px;
+          outline: none;
+          color: white;
+          border-radius: 24px;
+          transition: 0.25s" class="form-control" placeholder="Work experience"  value={{request.form.Experience}}>
+        </div>
+
+
+        <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+        
+          <input type="text" name="Qualification" style="
+          background: none;
+          display: block;
+          margin: 20px auto;
+          text-align: center;
+          border: 2px solid #3498db;
+          padding: 10px 10px;
+          width: 250px;
+          outline: none;
+          color: white;
+          border-radius: 24px;
+          transition: 0.25s" class="form-control" placeholder="Qualifications"  value={{request.form.Qualification}}>
+        </div>
+
+
+
+
+        <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+       
+          <input type="text" name="Certification" style="
+          background: none;
+          display: block;
+          margin: 20px auto;
+          text-align: center;
+          border: 2px solid #3498db;
+          padding: 10px 10px;
+          width: 250px;
+          outline: none;
+          color: white;
+          border-radius: 24px;
+          transition: 0.25s" class="form-control" placeholder="Certifications"  value={{request.form.Certification}}>
+        </div>
+
+        <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+         
+          <input type="text" name="Cv_Photo" style="
+          background: none;
+          display: block;
+          margin: 20px auto;
+          text-align: center;
+          border: 2px solid #3498db;
+          padding: 10px 10px;
+          width: 250px;
+          outline: none;
+          color: white;
+          border-radius: 24px;
+          transition: 0.25s" class="form-control" placeholder="Passport size photo image link"  value={{request.form.Cv_Photo}}>
+        </div>
+
+
+        <br>
+      
+           
+<div>
+  <center> <p><b><input type="submit" class="btn btn-dark" value="submit" style="border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;"></b></p></center>
+</div>
+<br>
+      </div>
+    </form>
+    <br><BR><BR>
+</body>
+    {% else %}
+
+
+
+<div class="container" style="margin-top:50px;">
+
+  
+        {% for get in get %}
+
+<img src="{{get.Cv_Photo}}" style="float:right; clear:left; width:200px;">
+
+<h1>Name: {{get.Cv_Full_Name}}</h1>
+<h3>{{get.Cv_Speciality}}</h3>
+<br>
+<h5>&#127968; Address: {{get.Address}}</h5>
+<h5>&#x2709; Email: {{get.Email}}</h5>
+<h5>&#128241;  Contact no: {{get.Contact}}</h5>
+    <h5> <img src="data:image/png;base64,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" style="width:35px; margin-left:-10px;">LinkedIn Account: <a href="{{get.Linkdin}}">{{get.Linkdin}}</a></h5>
+  <h5><img src="https://clipground.com/images/twitter-logo-emoji-2.jpg" style="width:25px;"> Twitter Account: <a href="{{get.Twitter}}">{{get.Twitter}}</a></h5>
+    <h5><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" style="width:30px;"> Github Account: <a href="{{get.Github}}">{{get.Github}}</a></h5>
+    <h5>&#128187; Website: <a href="{{get.Website}}">{{get.Website}}</a></h5></h5>
+
+
+
+    </div>
+
+
+      <br>
+      <center><hr style="width:90%;"></center>
+<br>
+      <div style="margin-left:80px; margin-right:80px;"> 
+        <b><i>Profile:</i></b> {{get.Profile}}
+        <br><br>
+        <b><i>Skills:</i></b> {{get.Skills}}
+        <br><br>
+        <b><i>Languages Spoken:</i></b> {{get.Languages}}
+        <br><br>
+        <b><i>Software:</i></b> {{get.Software}}
+        <br><br>
+        <b><i>Experience:</i></b> {{get.Experience}}
+        <br><br>
+        <b><i>Qualification:</i></b> {{get.Qualification}}
+        <br><br>
+        <b><i>Certification:</i></b> {{get.Certification}}
+        <br><br>
+
+</div>
+
+
+
+    {% endfor %}
+    {% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!--hello-->
+  <!-- Meta Tags For SEO -->
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="A demo site featuring an ajax-based stock widget that uses Python and Flask as a backend microservice API">
+    <meta name="author" content="Shane Larson">
+  <title>ZLASH</title>
+
+  <!-- Bootstrap Link -->
+
+
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <link href="../static/css/site.css">
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<!-- fonts links -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <!-- <link href="{{ url_for('static',    filename='css/site.css') }}" rel="stylesheet"> -->
+    <link href="../static/css/site.css">
+
+  <!-- CSS link -->
+
+
+
+<!--
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="../static/assets/style.css"> -->
+  <link rel="stylesheet" href="../static/css/style.css">
+
+  <!-- <link rel="stylesheet" href="style.css" type="text/css"> -->
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/exporting.js"></script>
+		<script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+
+
+    <script src="../static/scripts/"></script>
+    <!-- <script src="{{ url_for('static',    filename='scripts/site.js') }}"></script> -->
+<!-- 
+
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+
+
+  <script src="../static/scripts/site.js"></script>
+
+
+ -->
+
+
+
+
+  <script src="https://cdn.ckeditor.com/ckeditor5/23.1.0/classic/ckeditor.js"></script>
+  <script type="text/javascript">
+    CKEDITOR.replace('editor')
+  </script>
+
+</head>
+
+
+<body>
+
+
+<!-- general navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #00022E">
+  <a class="navbar-brand" href="/"><img src="../static/images/zlash_logo.png" style="block-size: 40px; width:30px"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent"  style="background-color: #00022E">
+
+    <ul class="navbar-nav mr-auto" style="padding-right:58px;">
+
+      <li class="nav-item">
+        <a class="nav-link" href="/about" style="color:#EAA80C;"><i class='fas fa-user-friends'></i>About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contactus" style="color:#EAA80C;"><i class="fa fa-fw fa-envelope"></i>Contact Us</a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a  style="color:#EAA80C;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class='fas fa-chart-line'></i> Market Status
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/stockmarket"><i class='fas fa-funnel-dollar'></i>Stock Market</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="https://news.google.com/topstories?hl=en-IN&gl=IN&ceid=IN:en"><i class="fa fa-newspaper-o"></i>Google News</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="https://www.forentrepreneurs.com/surveys"><i class='fas fa-poll'></i>Surveys</a>
+
+        </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a  style="color:#EAA80C;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-question" aria-hidden="true"></i> Problems
+        </a>
+ 
+           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+             <a class="dropdown-item" href="/viewproblems"><i class="fa fa-eye" aria-hidden="true"></i>View problems</a> 
+             <div class="dropdown-divider"></div>
+             <a class="dropdown-item" href="/postproblem"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Post a problem</a>
+         </div>
+    </li>
+
+        <!-- {% if session.logged_in_et %}
+    <li class="nav-item dropdown">
+         <a  style="color:#ffffff;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           <i class="fa fa-question" aria-hidden="true"></i> Problems
+       </a>
+
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/viewproblems"><i class="fa fa-eye" aria-hidden="true"></i>View problems</a> 
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/postproblemet"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Post a problem</a>
+        </div>
+   </li>
+   {% elif session.logged_in_iv %}
+   <li class="nav-item dropdown">
+    <a  style="color:#ffffff;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <i class="fa fa-question" aria-hidden="true"></i> Problems
+  </a>
+
+     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+       <a class="dropdown-item" href="/viewproblems"><i class="fa fa-eye" aria-hidden="true"></i>View problems</a> 
+       <div class="dropdown-divider"></div>
+       <a class="dropdown-item" href="/postproblemiv"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Post a problem</a>
+   </div>
+</li>
+{% elif session.logged_in_pe %}
+<li class="nav-item dropdown">
+  <a  style="color:#ffffff;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <i class="fa fa-question" aria-hidden="true"></i> Problems
+</a>
+
+   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+     <a class="dropdown-item" href="/viewproblems"><i class="fa fa-eye" aria-hidden="true"></i>View problems</a> 
+     <div class="dropdown-divider"></div>
+     <a class="dropdown-item" href="/postproblempe"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Post a problem</a>
+ </div>
+</li>
+
+{% endif %} -->
+      </ul>
+
+
+        <ul class="nav navbar-nav navbar-right" style="padding-right:58px;">
+            {%if session.logged_in_et %}
+
+           
+
+            
+            <li class="nav-item">
+              <a class="nav-link" href="/dashboardet" style="color:#ffffff;"><i class="fas fa-user"></i> Welcome {{session.username}}</a>
+            </li>
+
+              <li class="nav-item">
+          <a class="nav-link" href="/logoutet" style="color:#ffffff;"><i class="fas fa-sign-out-alt"></i>Logout</a>
+              </li>
+            {% elif session.logged_in_iv %}
+            <!-- <a href="/viewmyproblemsiv"><i class='fas fa-funnel-dollar'></i>MY PROBLEMS</a> -->
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="/viewmyproblemsiv" style="color:#ffffff;"><i class="fas fa-user"></i> My Problems</a>
+            </li> -->
+
+            <li class="nav-item">
+              <a class="nav-link" href="/dashboardiv" style="color:#ffffff;"><i class="fas fa-user"></i> Welcome {{session.username}}</a>
+            </li>
+
+              <li class="nav-item">
+          <a class="nav-link" href="/logoutiv" style="color:#ffffff;"><i class="fas fa-sign-out-alt"></i>Logout</a>
+              </li>
+            {% elif session.logged_in_pe %}
+            <li class="nav-item">
+              <a class="nav-link" href="/dashboardpe" style="color:#ffffff;"><i class="fas fa-user"></i> Welcome {{session.username}}</a>
+            </li>
+
+              <li class="nav-item">
+          <a class="nav-link" href="/logoutpe" style="color:#ffffff;"><i class="fas fa-sign-out-alt"></i>Logout</a>
+              </li>
+            {% else %}
+            
+              <li class="nav-item dropdown">
+
+              <a style="color:#EAA80C;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-user-circle" aria-hidden="true"></i>Register
+              </a>
+
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/register_et"><i class='fas fa-seedling'></i>Entrepreneur</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/register_iv"><i class='fas fa-hand-holding-usd'></i>Investor</a>
+          <!-- <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/register_pe"><i class='fas fa-chalkboard-teacher'></i>Inspire</a>
+
+        </div> -->
+      </li>
+
+
+        <li class="nav-item dropdown">
+          <a style="color:#EAA80C;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-fw fa-user"></i> Login
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/login_et"><i class='fas fa-seedling'></i>Entrepreneur</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/login_iv"><i class='fas fa-hand-holding-usd'></i>Investor</a>
+            <!-- <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/login_pe"><i class='fas fa-chalkboard-teacher'></i>Inspire</a>
+
+        </div> -->
+      </li> 
+            {% endif %}
+            
+</ul>
+
+</div>
+</nav>
+
+
+
+
+ <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/exporting.js"></script>
+		<script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+
+
+    <script src="../static/scripts/site.js"></script>
+    <!-- <script src="{{ url_for('static',    filename='scripts/site.js') }}"></script> -->
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+crossorigin="anonymous"></script>
+
+
+
+<script src="https://cdn.ckeditor.com/ckeditor5/23.1.0/classic/ckeditor.js"></script>
+<script type="text/javascript">
+  CKEDITOR.replace('editor')
+</script>
+
+
+<!-- 
+ <script src="//cdn.ckeditor.com/4.6.2/basic/ckeditor.js"></script>
+ <script type="text/javascript">
+   CKEDITOR.replace('editor')
+ </script>
+  -->
+
+ 
+{% block body %}
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+crossorigin="anonymous"></script>
+
+
+
+ <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous">
+    </script>
+    
+
+
+
+
+
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+
+
+  <script src="../static/scripts/site.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.ckeditor.com/ckeditor5/23.1.0/classic/ckeditor.js"></script>
+<script type="text/javascript">
+  CKEDITOR.replace('editor')
+</script>
+
+  <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<!-- <script src="//cdn.ckeditor.com/4.6.2/basic/ckeditor.js"></script>
+<script type="text/javascript">
+  CKEDITOR.replace('editor')
+</script> -->
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+</body>
+
+
+
+
+
+
+
+</html>

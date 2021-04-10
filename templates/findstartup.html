@@ -1,0 +1,61 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+
+
+<body style="background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw8PDxUPDw8VFRUVFRUVFRUVFRUVFRUVFRUWFhUVFRUYHSggGBolHRUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDQ0NDg0NDisZFRkrKysrLSsrKysrKy03KysrLSsrKysrLSstKysrKysrNy0tKysrKysrKysrKysrKysrK//AABEIALEBHAMBIgACEQEDEQH/xAAXAAEBAQEAAAAAAAAAAAAAAAABAAIH/8QAFhABAQEAAAAAAAAAAAAAAAAAAAER/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDkBSBFQgijAEKMBFEFEUCxHEgkYgCw4gCOIAGgAFaoABoKMhoABhQMhoUACAAKAkGAYlCCMUIIxEEYiCRUQRxEAiQCw4sAYsKBlYVQZDQoAY0AZoaoUZDVFBlGgACACSAwwQgmgQRUMAkGIGEGAUjARRBJEAiQZTQwAGgDIawUGVSAZDQAM1oKMitAACKABoAkNAioYChiMAwgoExEEUQRRBIoBiwoAsKABoAyK1QDNFaAMimigBSKDKIqjNDQAAgCQQJgIGERqAmgYgYYIQMaEMBFGAikCRQBEAA0AZqNFBmhqigzQQDIaZACkVQUGgADQBIIGEEC1GY0BhghiBjQhgGEQgSCBIIJJAkkABAAGgAKaKDNFaZACmgGaK1WaoBSAAIAkEDCIYBjUZhgNQiGIGNMtATAQJBAkICggKQBAigBSKAoprNAAigGWqzQTNNCgBAAEASzGoBLMINQggYYDEGoWSDRBgGEECWSBQQEJAggCoIAUGsgqEAFFIAAiqAEAAQCIMAmCEDDAQahjJQahZMBqFmEGizpAnWSBQQFDUCQQIKgENQoIKgACKoKDRQFBoADTQCIIGEECQQJgUBoswoNFmEGiyga1DUDSGgGgEBC0AQgCtFQBUGgACyogaKASFAJVAohCBIIE6yQaLJBpQIGiyUGkyQa1ayQK0IDqGrQOgICBqBICqEIAggCCQIIAgkCKQFQoFCkChSAlIEUkFDElCokgoigCSBRJABUgCSUCSBlQICEgASBJIH/2Q==);height: 100%; background-repeat: no-repeat; background-size: cover;">
+ 
+    <br><br><br>
+<div class="container" style="background-color: black;">
+
+  <h1 style="color:#EEA80C; padding-top: 20px;padding-bottom: 10px; 
+  font-family: 'Libre Baskerville', serif;"> <center>Find Business</center></h1><br>
+  
+<br>
+
+    <form method="POST" actions="">
+      
+
+
+
+
+            <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+               
+                <input type="text" name="username" style="
+                background: none;
+                display: block;
+                margin: 20px auto;
+                text-align: center;
+                border: 2px solid #3498db;
+                padding: 10px 10px;
+                width: 250px;
+                outline: none;
+                color: white;
+                border-radius: 24px;
+                transition: 0.25s" class="form-control" placeholder="Username of the entrepreneur" value={{request.form.username}}>
+              </div>
+          
+
+
+      <br>
+        
+<div>
+    <center> <p><b><input type="submit" class="btn btn-dark" value="submit" style=" border: 0;
+      background: none;
+      display: block;
+      margin: 20px auto;
+      text-align: center;
+      border: 2px solid #2ecc71;
+      padding: 14px 40px;
+      outline: none;
+      color: white;
+      border-radius: 24px;
+      transition: 0.25s;
+      cursor: pointer"></b></p></center>
+  </div>
+    </form>
+    <br>
+    </div>
+</body>
+{% endblock %}

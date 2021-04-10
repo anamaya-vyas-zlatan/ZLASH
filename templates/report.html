@@ -1,0 +1,78 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+ 
+{% macro render_field(field) %}
+  {{ field.label }}
+  {{ field(**kwargs)|safe }}
+  {% if field.errors %}
+    {% for error in field.errors %}
+      <span class="help-inline">{{ error }}</span>
+    {% endfor %}
+  {% endif %}
+{% endmacro %}
+<br><br><br>
+
+<body style="background-image: url(https://c0.anyrgb.com/images/62/99/gradient-background-nature-wallpaper-purple-color-color-gradient-gradient-background-gradient-wallpaper-desktop-wallpaper.jpg); background-repeat: no-repeat; background-size: cover;">
+<div class="container" style="background-color: black;">
+
+  <h1 style="color:#EEA80c; padding-top: 20px;padding-bottom: 10px; 
+  font-family: 'Libre Baskerville', serif;"> <center>Report Account</center></h1><br>
+ 
+<br>
+<form method="POST" action="">
+      
+
+        <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+         
+          <input type="text" name="Report_Person"  style="
+          background: none;
+          display: block;
+          margin: 20px auto;
+          text-align: center;
+          border: 2px solid #3498db;
+          padding: 10px 10px;
+          width: 250px;
+          outline: none;
+          color: white;
+          border-radius: 24px;
+          transition: 0.25s" class="form-control" placeholder="Type username here"  value={{request.form.Report_Person}}>
+        </div>
+
+
+
+        <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+   
+          <input type="text" name="Report_Issue"  style="
+          background: none;
+          display: block;
+          margin: 20px auto;
+          text-align: center;
+          border: 2px solid #3498db;
+          padding: 10px 10px;
+          width: 250px;
+          outline: none;
+          color: white;
+          border-radius: 24px;
+          transition: 0.25s" class="form-control" placeholder="Explain your issue here"  value={{request.form.Report_Issue}}>
+        </div>
+        <br>
+
+        <p><input type = "submit" class = "btn btn-dark" style="border: 0;
+          background: none;
+          display: block;
+          margin: 20px auto;
+          text-align: center;
+          border: 2px solid #2ecc71;
+          padding: 14px 40px;
+          outline: none;
+          color: white;
+          border-radius: 24px;
+          transition: 0.25s;
+          cursor: pointer" value=" Submit"></p>
+    </form>
+    <br>
+    </div>
+ </body>
+
+{% endblock %}

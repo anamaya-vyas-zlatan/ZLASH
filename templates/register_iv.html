@@ -1,0 +1,223 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+ 
+{% macro render_field(field) %}
+  {{ field.label }}
+  {{ field(**kwargs)|safe }}
+  {% if field.errors %}
+    {% for error in field.errors %}
+      <span class="help-inline">{{ error }}</span>
+    {% endfor %}
+  {% endif %}
+{% endmacro %}
+
+
+
+
+
+<body style="background-image: url(https://images.unsplash.com/photo-1579546929518-9e396f3cc809?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxMjA3fDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&w=1080); background-size: cover; background-repeat: no-repeat;">
+ 
+ 
+    <br><br><br>
+    <div class= "container" style="background-color: black;">
+
+  <h1 style="color:#EEA80C; padding-top: 20px;padding-bottom: 10px; 
+  font-family: 'Libre Baskerville', serif; "> <center>Register as Investor</center></h1><br>
+ 
+<br>
+
+<form method="POST" action="">
+   
+
+    <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+     
+      <input type="text" name="First_Name" style="
+      background: none;
+      display: block;
+      margin: 20px auto;
+      text-align: center;
+      border: 2px solid #3498db;
+      padding: 10px 10px;
+      width: 250px;
+      outline: none;
+      color: white;
+      border-radius: 24px;
+      transition: 0.25s" class="form-control" placeholder="First Name"  value={{request.form.First_Name}}>
+    </div>
+
+
+
+    <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+   
+    <input type="text" name="Last_Name" style="
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 10px 10px;
+    width: 250px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s" class="form-control" placeholder="Last Name" value={{request.form.Last_Name}}>
+  </div>
+
+
+    <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+    
+    <input type="text" name="Email" style="
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 10px 10px;
+    width: 250px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s" class="form-control" placeholder="Email address" value={{request.form.Email}}>
+  </div>
+
+
+      <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+     
+      <input type="text" name="Phone_Number" style="
+      background: none;
+      display: block;
+      margin: 20px auto;
+      text-align: center;
+      border: 2px solid #3498db;
+      padding: 10px 10px;
+      width: 250px;
+      outline: none;
+      color: white;
+      border-radius: 24px;
+      transition: 0.25s" class="form-control" placeholder="10-digit phone number" value={{request.form.Phone_Number}}>
+    </div>
+
+
+
+
+      <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+   
+      <input type="date" name="DOB" style="
+      background: none;
+      display: block;
+      margin: 20px auto;
+      text-align: center;
+      border: 2px solid #3498db;
+      padding: 10px 10px;
+      width: 250px;
+      outline: none;
+      color: white;
+      border-radius: 24px;
+      transition: 0.25s" class="form-control" placeholder="Choose date from calendar" value={{request.form.DOB}}>
+    </div>
+
+
+
+    <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+
+    <input type="text" name="Username" style="
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 10px 10px;
+    width: 250px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s" class="form-control" placeholder="Username" value={{request.form.Username}}>
+  </div>
+
+
+
+
+      <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+        
+            <input type="password" name="Password" style="
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            border: 2px solid #3498db;
+            padding: 10px 10px;
+            width: 250px;
+            outline: none;
+            color: white;
+            border-radius: 24px;
+            transition: 0.25s" class="form-control" placeholder="Password" value={{request.form.Password}}>
+          </div>
+
+
+      <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+       
+            <input type="password" name="confirm" style="
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            border: 2px solid #3498db;
+            padding: 10px 10px;
+            width: 250px;
+            outline: none;
+            color: white;
+            border-radius: 24px;
+            transition: 0.25s" class="form-control" placeholder="Confirm Password" value={{request.form.confirm}}>
+          </div>
+
+
+    
+<div>
+  <center> <p><b><input type="submit" class="btn btn-dark" value="submit" px; style=" border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer"></b></p></center>
+    <br>
+</div>
+  </form>
+
+
+
+
+
+
+</div>
+<br><br><br>
+</body>
+
+
+
+
+
+
+
+
+
+
+<!-- </div> -->
+<!--   
+
+<center><img src="../static/images/new-zlash-logo.png" style="display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -520px;
+    margin-bottom: auto;
+    width: 20%;
+    opacity:0.2"></center> -->
+
+
+{% endblock %}

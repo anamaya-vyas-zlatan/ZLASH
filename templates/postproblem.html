@@ -1,0 +1,155 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+ 
+{% macro render_field(field) %}
+  {{ field.label }}
+  {{ field(**kwargs)|safe }}
+  {% if field.errors %}
+    {% for error in field.errors %}
+      <span class="help-inline">{{ error }}</span>
+    {% endfor %}
+  {% endif %}
+{% endmacro %}
+
+
+
+<body style="background-image:url(https://images.unsplash.com/photo-1579546929662-711aa81148cf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxMjA3fDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&w=1080); background-size: cover; background-repeat: no-repeat;"
+<BR><Br></Br>
+
+  <div class="container" style="background-color: black;">
+<h1 style="color:#EEA80C; padding-top: 20px;padding-bottom: 10px; 
+font-family: 'Libre Baskerville', serif;"> <center>Post your problem</center></h1><br>
+
+
+
+ <form method="POST" action="">
+  <div class = "form-group" style="margin-left: 10%; margin-right: 10%;">
+    
+
+
+      <label for="exampleSelect1" style="color:red;">Select type of Problem from dropdown</label>
+      <select class="form-control" style="background-color:black; color:white;" id="exampleSelect1" name="Problem_Type" value={{request.form.Problem_Type}}>
+
+          <option>Accessories</option> 
+          <option>Agriculture</option> 
+            <option>Bags and Cluthches</option> 
+            <option>Clothing</option>
+             <option> Education</option> 
+             <option> Electronics</option> 
+             <option> Finance</option>
+              <option> Fitness</option> 
+              <option>Food</option>
+               <option>Footwear</option> 
+                <option>Furniture</option>
+                 <option>Skin or Hair care</option> 
+                  <option> Media</option> 
+                   <option> Medication</option> 
+                   <option> Services</option>
+                    <option> Software</option>  
+                    <option> Sports</option>  
+                    <option>Technology</option> 
+                     <option> Traveling </option>
+                      <option>  others</option> 
+
+
+      </select>
+
+
+
+  </div>
+ 
+
+  <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+  
+    <input type="text" name="Problem_Subject" style="
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 10px 10px;
+    width: 250px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s" class="form-control" placeholder="Describe your problem in one line here" value={{request.form.Problem_Subject}}>
+  </div>
+
+
+
+  <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+   
+    <input type="text" name="Problem_Body" style="
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 10px 10px;
+    width: 250px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s" class="form-control" placeholder="Explain your problem in detail" value={{request.form.Problem_Body}}>
+  
+</div>
+
+
+
+
+  <div>
+    
+    <center> <button type = "submit" class="btn btn-dark" value="submit" style=" border: 0;
+      background: none;
+      display: block;
+      margin: 20px auto;
+      text-align: center;
+      border: 2px solid #2ecc71;
+      padding: 14px 40px;
+      outline: none;
+      color: white;
+      border-radius: 24px;
+      transition: 0.25s;
+      cursor: pointer">Post</button>
+    </center>
+    <br>
+             </div>
+</form>
+
+
+
+
+</div>
+
+
+<!-- {%if session.logged_in_et %}
+<li>
+  <a href="/dashboardet">go to dashboard for entrepenuer, {{session.username}}</a>
+</li>
+{% elif session.logged_in_iv %}
+<li>
+  <a href="/dashboardiv">go to dashboard for investor, {{session.username}}</a>
+</li>
+
+{% elif session.logged_in_pe %}
+<li>
+  <a href="/dashboardpe">go to dashboard for person, {{session.username}}</a>
+</li>
+{% endif %} -->
+
+
+</body>
+<!-- </div> -->
+<!--   
+
+<center><img src="../static/images/new-zlash-logo.png" style="display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -520px;
+    margin-bottom: auto;
+    width: 20%;
+    opacity:0.2"></center> -->
+
+
+{% endblock %}

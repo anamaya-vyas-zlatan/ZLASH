@@ -1,0 +1,220 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+
+{% macro render_field(field) %}
+  {{ field.label }}
+  {{ field(**kwargs)|safe }}
+  {% if field.errors %}
+    {% for error in field.errors %}
+      <span class="help-inline">{{ error }}</span>
+    {% endfor %}
+  {% endif %}
+{% endmacro %}
+
+
+
+<body style="background-image: url(https://i.stack.imgur.com/UgYCc.png);background-repeat: no-repeat; background-size: cover;">
+
+
+<BR><BR><BR>
+
+<div class="container" style="background-color: black;">
+
+  <h1 style="color:#EEA80C; padding-top: 20px;padding-bottom: 10px; 
+  font-family: 'Libre Baskerville', serif;"> <center>Business Profile</center></h1><br>
+ 
+
+<br>
+<form method="POST" action="">
+     
+
+  <div class = "form-group" style="margin-left: 10%; margin-right: 10%;">
+
+  <label for="exampleSelect1" style="color:red;">Select type of Problem from dropdown</label>
+  <select class="form-control" style="background-color:black; color:white;" id="exampleSelect1" name="Post_Type" value={{request.form.Post_Type}}>
+
+      <option>Accessories</option> 
+      <option>Agriculture</option> 
+        <option>Bags and Cluthches</option> 
+        <option>Clothing</option>
+         <option> Education</option> 
+         <option> Electronics</option> 
+         <option> Finance</option>
+          <option> Fitness</option> 
+          <option>Food</option>
+           <option>Footwear</option> 
+            <option>Furniture</option>
+             <option>Skin or Hair care</option> 
+              <option> Media</option> 
+               <option> Medication</option> 
+               <option> Services</option>
+                <option> Software</option>  
+                <option> Sports</option>  
+                <option>Technology</option> 
+                 <option> Traveling </option>
+                  <option>  others</option> 
+
+
+  </select>
+
+  </div>
+        <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+          
+            <input type="text" name="Post_Subject" style="
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            border: 2px solid #3498db;
+            padding: 10px 10px;
+            width: 250px;
+            outline: none;
+            color: white;
+            border-radius: 24px;
+            transition: 0.25s" class="form-control" placeholder="Describe your post in one line" value={{request.form.Post_Subject}}>
+          </div>
+
+        
+        <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+           
+            <input type="text" name="Post_Contact" style="
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            border: 2px solid #3498db;
+            padding: 10px 10px;
+            width: 250px;
+            outline: none;
+            color: white;
+            border-radius: 24px;
+            transition: 0.25s" class="form-control" placeholder="10-digit phone number" value={{request.form.Post_Contact}}>
+          </div>
+
+
+        <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+       
+            <input type="text" name="Post_Linkdin" style="
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            border: 2px solid #3498db;
+            padding: 10px 10px;
+            width: 250px;
+            outline: none;
+            color: white;
+            border-radius: 24px;
+            transition: 0.25s" class="form-control" placeholder="LinkedIn account profile link" value={{request.form.Post_Linkdin}}>
+          </div>
+
+        <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+          
+            <input type="text" name="Post_Github" style="
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            border: 2px solid #3498db;
+            padding: 10px 10px;
+            width: 250px;
+            outline: none;
+            color: white;
+            border-radius: 24px;
+            transition: 0.25s" class="form-control" placeholder="Github link" value={{request.form.Post_Github}}>
+          </div>
+
+
+        <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+    
+            <input type="text" name="Post_Body" style="
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            border: 2px solid #3498db;
+            padding: 10px 10px;
+            width: 250px;
+            outline: none;
+            color: white;
+            border-radius: 24px;
+            transition: 0.25s" class="form-control" placeholder="Explain your start-up in detail" value={{request.form.Post_Body}}>
+          </div>
+
+
+          <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+           
+            <input type="text" name="Post_Imglink1" style="
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            border: 2px solid #3498db;
+            padding: 10px 10px;
+            width: 250px;
+            outline: none;
+            color: white;
+            border-radius: 24px;
+            transition: 0.25s" class="form-control" placeholder="Paste image-1 link here" value={{request.form.Post_Imglink1}}>
+          </div>
+
+          <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+          
+            <input type="text" name="Post_Imglink2" style="
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            border: 2px solid #3498db;
+            padding: 10px 10px;
+            width: 250px;
+            outline: none;
+            color: white;
+            border-radius: 24px;
+            transition: 0.25s" class="form-control" placeholder="Paste image-2 link here" value={{request.form.Post_Imglink2}}>
+          </div>
+
+          <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
+          
+            <input type="text" name="Post_Imglink3" style="
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            border: 2px solid #3498db;
+            padding: 10px 10px;
+            width: 250px;
+            outline: none;
+            color: white;
+            border-radius: 24px;
+            transition: 0.25s" class="form-control" placeholder="Paste image-3 link here" value={{request.form.Post_Imglink3}}>
+          </div>
+
+<br>
+   
+            <center>
+              <button type="submit" class="btn btn-dark" style="border: 0;
+              background: none;
+              display: block;
+              margin: 20px auto;
+              text-align: center;
+              border: 2px solid #2ecc71;
+              padding: 14px 40px;
+              outline: none;
+              color: white;
+              border-radius: 24px;
+              transition: 0.25s;
+              cursor: pointer;">Submit</button>
+          </center>  
+      <BR>
+ 
+</form>
+</div>
+<br><BR><BR>
+<BR>
+</body>
+
+
+{% endblock %}
