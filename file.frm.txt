@@ -1,0 +1,18 @@
+use zlash;
+describe cv;
+select*from post;
+create table et( Ee_Id int(100) auto_increment primary key, First_Name varchar(200) not null, Last_Name varchar(200) not null, Email varchar(200), Phone_Number bigint(100), DOB date, Username varchar(200) not null unique, Password varchar(500), Reg_Date timestamp default current_timestamp );
+create table iv( Iv_Id int(100) auto_increment primary key, First_Name varchar(200) not null, Last_Name varchar(200) not null, Email varchar(200), Phone_Number bigint(100), DOB date, Username varchar(200) not null unique, Password varchar(500), Reg_Date timestamp default current_timestamp );
+create table pe( Pe_Id int(100) auto_increment primary key, First_Name varchar(200) not null, Last_Name varchar(200) not null, Email varchar(200), Phone_Number bigint(100), DOB date, Username varchar(200) not null unique, Password varchar(500), Reg_Date timestamp default current_timestamp );
+create table prob(Prob_Id int(100) auto_increment primary key, Problem_Type varchar(200) not null, Problem_Subject varchar(200) not null, Problem_Author varchar(200) not null, Problem_Body text not null, Create_Date timestamp default current_timestamp);
+create table cous(Issue_Id int(100) auto_increment primary key, Name varchar(100), Phone_Number bigint(100), Email varchar(100), Subject varchar(200), Issue text, Create_Date timestamp default current_timestamp);
+create table cv(Cv_Id int(100) auto_increment primary key, Cv_Author varchar(100), Address varchar(200) , Contact bigint(14), Email varchar(100), Linkdin varchar(100), skills text, software varchar(500) , languages varchar(200), Experience text, education text, certification text );
+create table pictures(img_id int(10) not null auto_increment primary key, image longblob);
+create table post(Post_Id int(100) auto_increment primary key, Post_Type varchar(200) not null, Post_Subject varchar(200) not null, Post_Author varchar(200), Post_Likes int(100), Post_Images longblob, Post_Contact bigint(100), Post_Linkdin varchar(1000), Post_Github varchar(1000),Reg_Date timestamp default current_timestamp  );
+create table report(Report_Id int(100) auto_increment primary key, Report_Person varchar(200), Report_Issue text, Report_Author varchar(200), foreign key(Report_Person) references et(Username));
+drop table cv;show tables;
+create table cv(Cv_Id int(100) auto_increment primary key,Cv_Full_Name varchar(100), Cv_Speciality varchar(200), Cv_Author varchar(100), Address varchar(200) ,Email varchar(100),  Contact bigint(14), Linkdin varchar(100),Twitter varchar(100),Github varchar(100), Website varchar(200), Profile text, Skills text, Languages varchar(200), Software varchar(500) , Experience text, Qualification text, Certification text );
+select*from post;
+create table admin(username varchar(100), password varchar(200));
+insert into admin values('r_a_s_h_i3568', 'braveness');
+insert into admin values('anamaya_zlatan', 'uefaeuro2012');
