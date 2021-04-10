@@ -1,0 +1,217 @@
+.G1 { 
+    transform: translate(6px, 40px) rotate(-20deg); 
+} 
+
+.e1 { 
+    transform: translate(3px, 23px) rotate(-15deg); 
+} 
+
+.e2 { 
+    transform: translate(2px, 14px) rotate(-10deg); 
+} 
+
+.k1 { 
+    transform: translate(1px, 8px) rotate(-5deg); 
+} 
+
+.s1 { 
+    transform: translate(0px, 5px) rotate(0deg); 
+} 
+
+.f { 
+    transform: translate(-1px, 8px) rotate(5deg); 
+} 
+
+.o { 
+    transform: translate(-2px, 14px) rotate(10deg); 
+} 
+
+.r { 
+    transform: translate(-3px, 23px) rotate(15deg); 
+} 
+
+.G2 { 
+    transform: translate(-6px, 40px) rotate(20deg); 
+} 
+/* 
+.e3 { 
+    transform: translate(-3px, 25px) rotate(15deg); 
+} 
+
+.e4 { 
+    transform: translate(-6px, 40px) rotate(20deg); 
+} 
+
+.k2 { 
+    transform: translate(-14px, 60px) rotate(25deg); 
+} 
+
+.s2 { 
+    transform: translate(-20px, 80px) rotate(30deg); 
+}  */
+
+/* An inline-block element is placed as an inline 
+ element (on the same line as adjacent content),  
+ but it behaves like a block element  */ 
+
+
+
+ .G1d { 
+    transform: translate(6px, 40px) rotate(200deg); 
+} 
+
+.e1d { 
+    transform: translate(3px, 23px) rotate(150deg); 
+} 
+
+.e2d { 
+    transform: translate(2px, 14px) rotate(0deg); 
+} 
+
+.k1d { 
+    transform: translate(1px, 8px) rotate(15deg); 
+} 
+
+.s1d { 
+    transform: translate(0px, 5px) rotate(-35deg); 
+} 
+
+.fd { 
+    transform: translate(-1px, 8px) rotate(-5deg); 
+} 
+
+.od { 
+    transform: translate(-2px, 14px) rotate(-10deg); 
+} 
+
+.rd { 
+    transform: translate(-3px, 23px) rotate(-15deg); 
+} 
+
+.G2d { 
+    transform: translate(-6px, 40px) rotate(-20deg); 
+} 
+
+
+ 
+
+span { 
+    display: inline-block; 
+} 
+
+.letsee{
+    color:rgb(192, 214, 255);
+}
+
+
+
+
+
+
+
+
+
+/* register_et */
+
+.heading_reg_et{
+    color: #0E103D;
+    font-family: 'Libre Baskerville', serif;
+    
+}
+
+
+/* Create three equal columns that floats next to each other */
+/* .column {
+    float: left;
+    width: 33.33%;
+ 
+    margin-right: 105px;
+    padding-right: 200px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+   */
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+  /* @media screen and (max-width:600px) {
+    .column {
+      width: 100%;
+    }
+} */
+
+
+.column {
+    float: left;
+    padding: 10px;
+  }
+  
+  /* Left and right column */
+  .column.side {
+    width: 25%;
+  }
+  
+  /* Middle column */
+  .column.middle {
+    width: 50%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+
+
+  .dekho{
+      color:green;
+  }
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+  }
+  
+  /* Clear floats after image containers */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+
+  .row {
+    display: flex;
+  }
+  
+  .column {
+    flex: 33.33%;
+    padding: 5px;
+  }
+
+  .mySlides {display:none;}
+
+
+
+  * {
+    box-sizing: border-box;
+  }
+  
+  .box {
+    float: left;
+    width: 33.33%;
+    padding: 50px;
+  }
+  
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
